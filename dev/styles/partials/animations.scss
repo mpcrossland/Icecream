@@ -1,0 +1,91 @@
+$pink: #ffa0c3;
+$light-pink: #F1D4D6;
+$blue: #97D3DE;
+$light-blue: #b7e2e8;
+$green: #b3e579;
+$light-green: #c4f28c;
+
+.order-enter{
+	background: $light-pink;
+	border-radius: 10px;
+	transition: all 0.5s;
+	transform: translateX(125%);
+	max-height: 0;
+	padding: 0;
+	&.order-enter-active{
+		background: $light-pink;
+		transition: all 0.5s;
+		background: none;
+		max-height: 60px;
+		transform: translateX(0);
+	}
+}
+
+.order-leave{
+	background: $light-pink;
+	transition: all 0.5s;
+	background: none;
+	max-height: 60px;
+	padding: 2rem;
+	transform: translateX(0);
+	&.order-leave-active{
+		background: $light-pink;
+		border-radius: 10px;
+		transition: all 0.5s;
+		transform: translateX(125%);
+		max-height: 0;
+		padding: 0;
+	}
+}
+.count-enter{
+	transition: all 2.5s;
+	transform: translateY(150%);
+	&.count-enter-active{
+		transform: translateY(0);
+	}
+}
+.count-leave{
+  transition: all .25s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(0); // start it where it is
+	  &.count-leave-active{
+	    transform: translateY(-150%); // start it where it is
+	  }
+}
+
+
+.inventory-enter{
+	background: $light-pink;
+	border-radius: 10px;
+	transition: all 0.5s;
+	transform: translateX(125%);
+	max-height: 0;
+	padding: 0;
+	&.inventory-enter-active{
+		background: $light-pink;
+		transition: all 0.5s;
+		background: none;
+		max-height: 60px;
+		transform: translateX(0);
+	}
+}
+
+.inventory-leave{
+	background: $light-pink;
+	transition: all 0.5s;
+	background: none;
+	max-height: 60px;
+	padding: 2rem;
+	transform: translateX(0);
+	&.inventory-leave-active{
+		background: $light-pink;
+		border-radius: 10px;
+		transition: all 0.5s;
+		transform: translateX(125%);
+		max-height: 0;
+		padding: 0;
+	}
+}
+

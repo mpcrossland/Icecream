@@ -1,0 +1,163 @@
+$pink: #ffa0c3;
+$light-pink: #F1D4D6;
+$blue: #97D3DE;
+$light-blue: #b7e2e8;
+$green: #b3e579;
+$light-green: #c4f28c;
+
+//all buttons and hover animation
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button,
+input[type=submit] {
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid #000;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 2;
+}//SOLD OUT BUTTON
+button[disabled],
+input[type=submit][disabled] {
+  color: #d12028;
+  background: #fff;
+  border-color: #d12028;
+  -webkit-transform: rotate(-10deg) scale(1.5) translateX(50%) translateY(-50%);
+          transform: rotate(-10deg) scale(1.5) translateX(50%) translateY(-50%);
+}//disabled mouse over sold out
+button[disabled]:hover,
+input[type=submit][disabled]:hover {
+  color: #d12028;
+  cursor: not-allowed;
+}//disabled transition over sold out
+button[disabled]:after,
+input[type=submit][disabled]:after {
+  display: none;
+}
+button:after,
+input[type=submit]:after {
+  content: '';
+  z-index: -1;
+  display: block;
+  background: #FF73A8;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+button:hover,
+input[type=submit]:hover,
+button:focus,
+input[type=submit]:focus {
+  color: #fff;
+  outline: 0;
+}
+button:hover:after,
+input[type=submit]:hover:after,
+button:focus:after,
+input[type=submit]:focus:after {
+  height: 100%;
+}
+button.warning:after,
+input[type=submit].warning:after {
+  background: #d12028;
+}
+button.success:after,
+input[type=submit].success:after {
+  background: #2dc22d;
+}
+button.github,
+input[type=submit].github,
+button.facebook,
+input[type=submit].facebook,
+button.twitter,
+input[type=submit].twitter {
+  border: 0;
+  display: block;
+  margin-bottom: 2rem;
+  width: 100%;
+  color: #fff;
+  padding: 2rem;
+}
+button.samples,
+input[type=submit].github {
+  background: black;
+  padding: 15px;
+}
+button.github,
+input[type=submit].github {
+  background: #FF9800;
+  padding: 15px;
+}
+button.github:after,
+input[type=submit].github:after {
+  background: #ff7f00;
+}
+button.facebook,
+input[type=submit].facebook {
+  background: #3864a3;
+  padding: 15px;
+}
+button.facebook:after,
+input[type=submit].facebook:after {
+  background: #2d5082;
+}
+button.twitter,
+input[type=submit].twitter {
+  background: #5ea9dd;
+  padding: 15px;
+}
+button.twitter:after,
+input[type=submit].twitter:after {
+  background: #2c8dd0;
+}
+button.remove-button{
+	background: none;
+	border: none;
+}
+button.remove-button:after{
+	background: none;
+}
+button.remove-button:hover, button.remove-button:hover{
+  transition: all 0.2s;
+  color: red;
+  outline: 0;
+}

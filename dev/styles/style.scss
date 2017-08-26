@@ -1,4 +1,227 @@
+@import 'partials/normalize';
+@import 'partials/button';
+@import 'partials/animations';
+
+$pink: #ffa0c3;
+$light-pink: #F1D4D6;
+$blue: #97D3DE;
+$light-blue: #b7e2e8;
+$sky-blue: #97D6F2;
+$green: #b3e579;
+$light-green: #c4f28c;
+
+$display: 'Kranky', cursive;
+
+
 body{
-	background-color: #A1D26E;
+	background-color: $sky-blue;
 	margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+}
+h1{
+  font-family: $display;
+  font-size: 3rem;
+}
+h2{
+  font-family: $display;
+  font-size: 2rem;
+}
+.hello-wrap{
+  text-align: center;
+  margin: 0 auto;
+  width: 800px;
+  button.enter-btn{
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  img{
+    margin: auto;
+    position: relative;
+    top:-50px;
+  }
+}
+.shoppe{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+    button.show-inventory{
+      font-size: .9rem;
+      background-color: white;
+      transform: rotate(90deg);
+      transform-origin: top left;
+      margin-left: 30px;
+      position: absolute;
+      left:0;
+    }
+    button.hide-inventory{
+      font-size: .9rem;
+      background-color: white;
+      // transform: rotate(90deg);
+      // transform-origin: top left;
+      position: absolute;
+      // left:30px;
+    }
+  //Everything Center
+  .header-wrap{
+    padding: 20px;
+    // position: relative;
+    // left: -153px;
+      header.top{
+        h1{
+          display: inline;
+          position: relative;
+          z-index: 200;
+        }
+        img{
+          display: block;
+          margin: 0 auto;
+          max-width: 100%;
+          z-index: -100;
+        }
+     }
+  }
+  .list-of-icecream{
+    padding:20px;
+    li{
+      width: 100%;
+    }
+    .menu-icecream{
+      display: inline-block; 
+      border-bottom: 2px solid #000;
+      border-top: 1px solid #000;
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+      margin-bottom: 5px;
+      clear: both;
+      overflow: hidden;
+
+      h3{
+        width: 50%;
+        height: 50px;
+        margin-left: 120px;      }
+      img {
+        float: left;
+        max-height: 160px;
+        margin-right: 1rem;
+        margin-top: 25px;
+      }
+    }
+  }
+
+
+  //Everything Inventory
+  .inventory{
+    text-align: center;
+    background-color: $light-green;
+    order: -1;
+    max-width: 20%;
+    min-width: 20%;
+    padding: 20px;
+    .icecream-edit, .icecream-form {
+        margin-bottom: 20px;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        width: 100%;
+    }
+  }
+  input, select, textarea{
+    width: 50%;
+    padding: 10px;
+    line-height: 1;
+    font-size: .8rem;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    background: #fff;
+  }
+  input[name=name]{
+    width: 100%;
+  }
+  textarea[name=desc], input[name=image], button[name=add], button[name=remove]{
+    width: 100%;
+    border: 0;
+    font-size: .7rem;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    background: #fff
+  }
+  button[name=samples]{
+    background-color: $pink;
+    border: 0;
+    font-size: .7rem;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+  //Everything Order
+  .order-wrap{
+    h2{
+      text-align: center;
+    }
+    font-size: .7rem;
+    text-align: left;
+    background-color: $light-pink;
+    padding: 15px;
+    width: 180%;
+    button.remove-button{
+      font-size: 1.2rem;
+    }
+    ul.order li {
+      border-bottom: 1px solid #000;
+      margin-left: -30px;
+      padding: 1rem 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    ul.order li:hover button {
+      display: inline;
+    }
+    ul.order li button {
+      border: 0;
+      display: none;
+      line-height: 1;
+      padding: 0;
+    }
+    ul.order li.total {
+      font-weight: 600;
+      border-bottom: 3px solid #000;
+      border-top: 3px double #000;
+    }
+    ul.order li.unavailable {
+      text-decoration: line-through;
+      background: #f8d0d2;
+    }
+    ul.order li .price {
+      font-size: 1rem;
+      padding-left: 15px;
+    }
+    ul.order li span.count {
+      position: relative;
+      overflow: hidden;
+    }
+  }
 }

@@ -10,6 +10,14 @@ const notify = require('gulp-notify');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
+const history = require('connect-history-api-fallback');
+const connect = require('connect');
+const Rebase = require('re-base');
+const firebase = require('firebase/app');
+const ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+// var database = require('firebase/database');
+
+
 
 gulp.task('styles', () => {
     return gulp.src('dev/styles/**/*.scss')
@@ -23,7 +31,8 @@ gulp.task('js', () => {
     browserify('dev/scripts/app.js', {debug: true})
         .transform('babelify', {
             sourceMaps: true,
-            presets: ['es2015','react']
+            "presets": ["es2015", "es2016", "react"], 
+            "plugins": ["transform-object-rest-spread"]
         })
         .bundle()
         .on('error',notify.onError({
@@ -40,7 +49,8 @@ gulp.task('bs', () => {
     browserSync.init({
         server: {
             baseDir: './'
-        }
+        },
+        middleware: [history()] // <-- add this line
     });
 });
 
